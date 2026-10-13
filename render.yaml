@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: raya-risk-online
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /

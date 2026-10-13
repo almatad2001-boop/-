@@ -1,0 +1,12 @@
+{
+  "name": "raya-risk-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online room server for the Raya Risk game",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

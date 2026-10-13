@@ -10,3 +10,48 @@
 
 .online-panel{margin:18px 0;padding:16px;border:1px solid #436252;border-radius:15px;background:linear-gradient(140deg,#203630,#172a2d)}.online-panel h3{margin:0 0 6px;font-size:15px}.online-panel p{margin:4px 0 12px;color:#b6c5bd;font-size:11px;line-height:1.7}.online-actions{display:flex;gap:8px;align-items:center;margin-top:9px}.online-actions>*{flex:1;min-width:0}.room-code{font:800 22px Manrope, sans-serif;letter-spacing:3px;color:#f0d697;direction:ltr;display:inline-block}.room-players{display:grid;gap:6px;padding:10px;border-radius:10px;background:#111e22;color:#d5e0da;font-size:12px}.online-panel .input{margin-top:5px}
 
+
+/* Mobile: keep the full map visible and pin the action panel within reach. */
+@media (max-width: 700px) {
+  .app { width: 100%; margin: 0; padding: 6px 6px calc(42dvh + 14px); }
+  .top { position: relative; align-items: center; gap: 6px; margin: 0 2px 7px; }
+  .brand { gap: 7px; }
+  .brand-mark { width: 36px; height: 36px; border-radius: 11px; font-size: 19px; }
+  .brand h1 { font-size: 17px; }
+  .brand p { font-size: 9px; }
+  .pill { padding: 6px 8px; font-size: 9px; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 7px; }
+  .map-card { padding: 6px; border-radius: 15px; overflow: hidden; }
+  .map-head { padding: 2px 4px 5px; }
+  .map-head h2 { font-size: 12px; }
+  .map-head p { font-size: 9px; margin-top: 2px; }
+  .map-head .btn { min-height: 32px; padding: 5px 9px; }
+  .map { display: block; width: 100%; min-width: 0; min-height: 0; height: 38dvh; max-height: 300px; }
+  .legend { gap: 5px 9px; padding: 5px 3px 2px; font-size: 9px; }
+  .map-card > .small { display: none; }
+  .side { display: contents; }
+  .side-card:first-child { display: block; margin-top: 5px; padding: 5px; }
+  .side-card:first-child .card-head { display: none; }
+  .players { display: flex; gap: 4px; overflow-x: auto; margin: 0; }
+  .player-row { flex: 0 0 auto; grid-template-columns: 9px auto; gap: 4px; padding: 4px 7px; }
+  .player-row .player-stat { display: none; }
+  .player-row .player-name { font-size: 9px; }
+  .side-card:nth-child(2) { position: fixed; z-index: 20; left: 6px; right: 6px; bottom: calc(6px + env(safe-area-inset-bottom)); max-height: 40dvh; overflow-y: auto; overscroll-behavior: contain; padding: 9px; border-radius: 15px; box-shadow: 0 10px 35px #000a; }
+  .side-card:nth-child(2) .card-head { display: none; }
+  .side-card:nth-child(2) .phase { margin-top: 0; padding: 7px 9px; }
+  .side-card:nth-child(2) .phase b { font-size: 11px; }
+  .side-card:nth-child(2) .phase span { font-size: 10px; line-height: 1.5; margin-top: 3px; }
+  .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; margin-top: 6px; }
+  .actions > .phase, .actions > .selection, .actions > .select { grid-column: 1 / -1; }
+  .actions .btn { min-height: 34px; padding: 6px 8px; font-size: 10px; }
+  .actions .selection { min-height: 0; margin-top: 2px; line-height: 1.5; }
+  .small { font-size: 9px; margin: 5px 0 0; }
+  .overlay { padding: 10px; }
+  .dialog { padding: 16px; }
+}
+@media (max-width: 390px) {
+  .map { height: 35dvh; }
+  .side-card:nth-child(2) { max-height: 42dvh; }
+  .top-actions { gap: 4px; }
+  .sound-toggle { min-height: 32px; padding: 5px 7px; font-size: 9px; }
+}
